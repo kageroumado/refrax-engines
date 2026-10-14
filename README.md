@@ -1,10 +1,25 @@
 # Refrax engines
 
-Rendering engines for [Refrax](https://github.com/kageroumado/refrax-browser), published as releases of this repository.
+This repository distributes Chromium as an installable rendering engine for [Refrax](https://github.com/kageroumado/refrax-browser). Refrax can switch individual tabs between WebKit and Chromium; this repo holds the engine bundles and update catalog.
 
-- **Releases** named `chromium/<version>-r<revision>` carry `Refrax-Chromium-<version>.zip`, the signed and notarized engine bundle, with its SHA-256, its Ed25519 signature (`.sig`) and the matching dSYMs.
-- **The `catalog` release** carries `engines.json`, the list of releases Refrax offers, and `engines.json.sig`.
+Install in Refrax: **Settings → Engines → Available Engines**.
 
-Refrax installs engines from **Settings → Engines → Available Engines**. It accepts a catalog or an engine only with a valid signature from Refrax's release key, a matching checksum, and Refrax's Developer ID signature on the bundle.
+## Highlights
 
-The engine's source is in the Refrax repository: [`Engines/Chromium`](https://github.com/kageroumado/refrax-browser/tree/main/Engines/Chromium), built by [`Scripts/forge`](https://github.com/kageroumado/refrax-browser/tree/main/Scripts/forge) from ungoogled-chromium with Refrax's patches, and the contract every engine implements is [`Engines/CONTRACT.md`](https://github.com/kageroumado/refrax-browser/blob/main/Engines/CONTRACT.md).
+- Add Chromium to Refrax and switch individual tabs between engines.
+- Get engine updates through Refrax’s engine catalog.
+
+<details>
+<summary>Full feature list</summary>
+
+- Chromium bundles named `Refrax-Chromium-<version>.zip`, released under `chromium/<version>-r<revision>`.
+- SHA-256 checksums, Ed25519 signatures, and matching dSYMs.
+- The `catalog` release supplies `engines.json` and its signature.
+- Refrax checks the catalog signature, bundle checksum, and release-team code signature before installation.
+
+</details>
+
+## Notes
+
+- Requires [Refrax](https://github.com/kageroumado/refrax-browser).
+- [Engine source](https://github.com/kageroumado/refrax-browser/tree/main/Engines/Chromium) · [Build tooling](https://github.com/kageroumado/refrax-browser/tree/main/Scripts/forge) · [Engine contract](https://github.com/kageroumado/refrax-browser/blob/main/Engines/CONTRACT.md).
